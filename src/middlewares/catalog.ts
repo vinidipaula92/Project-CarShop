@@ -12,7 +12,7 @@ export type ErrorCatalog = Record<ErrorTypes, ErrorResponseObject>;
 
 export const errorCatalog: ErrorCatalog = {
   EntityNotFound: {
-    message: 'Entity not found',
+    message: 'Object not found',
     httpStatus: 404,
   },
   InvalidMongoId: {
