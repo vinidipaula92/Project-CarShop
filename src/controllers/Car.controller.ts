@@ -6,7 +6,7 @@ export default class CarController {
   constructor(private _service: IService<ICar>) { }
 
   public async create(
-    req: Request,
+    req: Request & { body: ICar },
     res: Response,
   ) {
     const createdCar = await this._service.create(req.body);
@@ -39,6 +39,6 @@ export default class CarController {
     res: Response<ICar>,
   ) {
     const deletedCar = await this._service.delete(req.params.id);
-    return res.status(200).json(deletedCar);
+    return res.status(204).json(deletedCar);
   }
 }
